@@ -1,4 +1,9 @@
-# 🎵 PODCAST APP | PORTFOLIO PIECE 💿
+# 🎵 PODTASTIC | PORTFOLIO PIECE 💿
+
+# Resources used 📖:
+- [Icon generator](https://favicon.io/favicon-generator/)
+
+# Project Guidelines:
 [DJS11] Starter Instructions for the Final Portfolio Piece Submission 🚀
 
 
