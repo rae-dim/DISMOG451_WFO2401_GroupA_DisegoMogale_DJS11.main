@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, BrowserRouter } from "react-router-dom";
 import { HomeRounded, CloseRounded, SearchRounded, FavoriteRounded, LightModeRounded, LogoutRounded} from "@mui/icons-material";
 import Logopng from "../images/favicon-32x32.png";
@@ -45,7 +45,7 @@ export default function Sidebar({ setMenuOpen, menuOpen, setDarkMode, darkMode})
  */
   return (
     <BrowserRouter>
-    <div className={`flex flex-col h-full w-64 gap-2  items-start ${darkMode ? 'bg-[#15171E] text-[#F2F3F4]' : 'bg-[#FFFFFF] text-[#111111]'} fixed z-50 transition-transform duration-300 ${menuOpen ? 'left-0' : '-left-full'} md:w-full md:max-w-xs`}>
+    <div className={`flex flex-col h-full w-64 gap-2  items-start ${darkMode ? 'bg-[#15171E] text-[#F2F3F4]' : 'bg-[#FFFFFF] text-[#111111]'} fixed z-50 transition-transform duration-300 ${menuOpen ? 'left-0' : '-left-full'} md:relative md:left-0`}>
 
       <div className="flex flex-row items-center justify-between w-full p-4">
         <div className="flex flex-row w-full items-center justify-center gap-6 font-bold text-xl my-4">
