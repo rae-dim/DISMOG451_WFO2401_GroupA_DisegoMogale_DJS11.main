@@ -26,7 +26,7 @@ export default function App() {
   return (
     <ThemeProvider theme={darkMode? darkTheme : lightTheme}> {/**ThemeProvider is used to pass down the current theme to the styled components */}
       <Container>
-        <div className={`w-full h-screen flex flex-col overflow-hidden ${themeClasses}`}>
+        <div className={`w-full h-screen flex flex-row overflow-hidden ${themeClasses}`}>
           <div className="flex flex-row overflow-hidden">
             <Sidebar />
           </div>
