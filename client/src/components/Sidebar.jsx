@@ -4,43 +4,45 @@ import { HomeRounded, CloseRounded, SearchRounded, FavoriteRounded, LightModeRou
 import Logopng from "../images/favicon-32x32.png";
 import "../index.css"; 
 
-const menuItems = [
-  {
-    link: "/",
-    name: "Listen Now",
-    icon: <HomeRounded />
-  },
 
-  {
-    link: "/search",
-    name: "Explore",
-    icon: <SearchRounded />
-  },
+export default function Sidebar({setMenuOpen, setDarkMode, darkMode})  {
 
-  {
-    link: "/favorites",
-    name: "Favorites",
-    icon: <FavoriteRounded />
-  }
-]
-
-const buttons = [
-  {
-    fun: console.log('Toggle theme'),
-    name: "Toggle Theme",
-    icon: <LightModeRounded />
-  },
-
-  {
-    fun: console.log('Log out'),
-    name: "Log Out",
-    icon: <LogoutRounded />
-  }
-]
-
-export default function Sidebar() {
-  const [darkMode, setDarkMode] = useState(true); // Example state for toggling theme
-
+  const menuItems = [
+    {
+      link: "/",
+      name: "Listen Now",
+      icon: <HomeRounded />
+    },
+  
+    {
+      link: "/search",
+      name: "Explore",
+      icon: <SearchRounded />
+    },
+  
+    {
+      link: "/favorites",
+      name: "Favorites",
+      icon: <FavoriteRounded />
+    }
+  ]
+  
+  const buttons = [
+    {
+      fun: () => setDarkMode(!darkMode),
+      name: "Toggle Theme",
+      icon: <LightModeRounded />
+    },
+  
+    {
+      fun: console.log('Log out'),
+      name: "Log Out",
+      icon: <LogoutRounded />
+    }
+  ]
+  
+  /* const [darkMode, setDarkMode] = useState(true); // Example state for toggling theme
+ */
   return (
     <BrowserRouter>
     <div className={`flex flex-col h-full w-64 gap-2 ${darkMode ? 'bg-[#15171E] text-[#F2F3F4]' : 'bg-[#FFFFFF] text-[#111111]'}`}>

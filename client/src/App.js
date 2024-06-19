@@ -6,7 +6,7 @@ import Sidebar from "./components/Sidebar"
 import classNames from "classnames"
 
 const Container = styled.div`
-    background: ${({ theme}) => theme.bg};
+    background: ${({ theme}) => theme.bgLight};
     width: 100%;
     height: 100vh;
     display: flex;
@@ -17,7 +17,7 @@ const Container = styled.div`
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true) //useState hook used to manage darkMode state. Initializes darkMode as true and provides 'setDarkMode' function to change the state.
-
+  const [menuOpen, setMenuOpen] = useState(true) //useState hook used to manage menuOpen
   const themeClasses = classNames({
     'bg-[#15171E] text-[#F2F3F4]': darkMode,
     'bg-[#FFFFFF] text-[#111111]':!darkMode,
@@ -28,9 +28,14 @@ export default function App() {
       <Container>
         <div className={`w-full h-screen flex flex-row overflow-hidden ${themeClasses}`}>
           <div className="flex flex-row overflow-hidden">
-            <Sidebar />
+            <Sidebar setMenuOpen={setMenuOpen} setDarkMode={setDarkMode} darkMode={darkMode}/>
           </div>
-          Podtastic
+          <div className="flex flex-col columns-3">
+            <div></div>
+            <div></div>
+            <div></div>
+
+          </div>
         </div>
       </Container>
     </ThemeProvider>
