@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-/* import { Link } from "react-router-dom"; */
+import { Link } from "react-router-dom";
 import { HomeRounded, CloseRounded } from "@mui/icons-material";
 import Logopng from "../images/favicon-32x32.png";
 import "../index.css"; 
@@ -19,15 +19,17 @@ export default function Sidebar() {
       </div>
       </div>
       <div className={`flex flex-row px-4 items-center gap-6 cursor-pointer ${darkMode ? 'text-[#F2F3F4] hover:bg-[#F2F3F4]' : 'text-[#111111] hover:bg-[#E5E7EB]'}`}>
-        <HomeRounded />
-        <div className="py-3">Listen Now</div>
+        <Link to="/">
+          <HomeRounded />
+          <div className="py-3">Listen Now</div>
+        </Link>
       </div>
-      <button
+      {/* <button
         className="m-4 p-2 bg-gray-500 text-white rounded"
         onClick={() => setDarkMode(prevMode => !prevMode)}
       >
         Toggle Theme
-      </button>
-    </div>
+      </button>*/}
+    </div> 
   );
 }
