@@ -3,6 +3,7 @@
 # Resources used 📖:
 - [Icon generator](https://favicon.io/favicon-generator/)
 - [Metatags generator](https://metatags.io/)
+- Tabnine AI for predictive code assistance
 
 # Project Guidelines:
 [DJS11] Starter Instructions for the Final Portfolio Piece Submission 🚀
