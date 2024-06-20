@@ -1,13 +1,23 @@
 import React from "react" //allowa us to add state to components for state management.
 import ReactDOM from "react-dom/client"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+// User pages
 import Favourites from "./pages/User/Favorites"
 import History from "./pages/User/History"
+
+// Components
 import AuthRequired from "./components/AuthRequired"
 import Layout from "./components/Layout"
+
+// Podcast pages
 import Explore from "./pages/Explore"
 import Login from "./pages/Login"
 import Logout from "./pages/Logout"
+import ListenNow from "./pages/ListenNow"
+import DisplayPodcast from "./pages/DisplayPodcast"
+import PodcastDetails from "./pages/PodcastDetails"
+
 
 export default function App() {
 
@@ -15,9 +25,12 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/logout" element={<Logout />} />
+          <Route path="/" exact element={<ListenNow />} />
+          <Route path="explore" element={<Explore />} />
+          <Route path="podcast/:id" element={<DisplayPodcast />} />
+          <Route path="podcast/:id/details" element={<PodcastDetails />} />
+          <Route path="login" element={<Login />} />
+          <Route path="logout" element={<Logout />} />
         </Route>
 
         <Route element={<AuthRequired />}>
