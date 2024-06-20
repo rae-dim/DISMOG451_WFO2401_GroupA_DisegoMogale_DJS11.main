@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, BrowserRouter } from "react-router-dom";
-import { HomeRounded, CloseRounded, SearchRounded, FavoriteRounded, LightModeRounded, LogoutRounded} from "@mui/icons-material";
+import { HomeRounded, CloseRounded, SearchRounded, FavoriteRounded, LightModeRounded, LogoutRounded, HistoryRounded} from "@mui/icons-material";
 import Logopng from "../images/favicon-32x32.png";
 import "../index.css"; 
 
@@ -24,6 +24,12 @@ export default function Sidebar({ setMenuOpen, menuOpen, setDarkMode, darkMode})
       link: "/favorites",
       name: "Favorites",
       icon: <FavoriteRounded />
+    },
+
+    {
+      link: "/history",
+      name: "History",
+      icon: <HistoryRounded />
     }
   ]
   
