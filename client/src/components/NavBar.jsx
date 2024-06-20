@@ -1,20 +1,17 @@
 import React from "react"
 import { useTheme } from "styled-components"
-import { MenuRounded, LoginRounded } from "@mui/icons-material"
+import { MenuRounded} from "@mui/icons-material"
 
-export default function NavBar() {
+export default function NavBar({setMenuOpen, menuOpen }) {
+
     const theme = useTheme()
 
     return (
-        <div className="flex justify-between w-full py-4 px-10 items-center gap-8"
+        <div className="flex justify-between w-full py-4 px-10 items-center gap-8 cursor-pointer md:hidden"
 			style={{ color: theme.text_primary, backgroundColor: theme.bg }}>
-			<div key="menu-icon" className="">
+			<button key="menu-icon" className="" onClick={() => setMenuOpen(!menuOpen) }>
                 <MenuRounded />
-            </div>
-            <div key="login-button" className="flex items-center gap-2 hover:">
-                <LoginRounded />
-                <span className="text-sm">Login</span>
-            </div>
+            </button>
 		</div>
     )
 }
