@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, BrowserRouter } from "react-router-dom";
-import { HomeRounded, CloseRounded, SearchRounded, FavoriteRounded, LightModeRounded, LogoutRounded, HistoryRounded} from "@mui/icons-material";
+import { Link, } from "react-router-dom";
+import { HomeRounded, CloseRounded, SearchRounded, FavoriteRounded, LightModeRounded, LogoutRounded, HistoryRounded, LoginRounded } from "@mui/icons-material";
 import Logopng from "../images/favicon-32x32.png";
 import "../index.css"; 
 
@@ -50,7 +50,6 @@ export default function Sidebar({ setMenuOpen, menuOpen, setDarkMode, darkMode})
   /* const [darkMode, setDarkMode] = useState(true); // Example state for toggling theme
  */
   return (
-    <BrowserRouter>
     <div className={`flex flex-col h-full w-64 gap-2  items-start ${darkMode ? 'bg-[#15171E] text-[#F2F3F4]' : 'bg-[#FFFFFF] text-[#111111]'} fixed z-50 transition-transform duration-300 ${menuOpen ? 'left-0' : '-left-full'} md:relative md:left-0`}>
 
       <div className="flex flex-row items-center justify-between w-full p-4">
@@ -72,6 +71,13 @@ export default function Sidebar({ setMenuOpen, menuOpen, setDarkMode, darkMode})
         </Link>
       ))}
 
+      <Link to="/login">
+        <div key="login-button" className={`flex flex-row px-4 items-center gap-6 cursor-pointer no-underline ${darkMode ? 'text-[#F2F3F4] hover:bg-[#660666]' : 'text-[#111111] hover:bg-[#E5E7EB]'}`}>
+          <LoginRounded />
+          <div className="py-3">Login</div>
+        </div>
+      </Link>
+
       <hr className="border-t w-full border-gray-200 dark:bg-gray-700 my-4" />
 
       {buttons.map((button) =>(
@@ -81,7 +87,5 @@ export default function Sidebar({ setMenuOpen, menuOpen, setDarkMode, darkMode})
       </button>
       ))}
     </div> 
-
-    </BrowserRouter>
   );
 }

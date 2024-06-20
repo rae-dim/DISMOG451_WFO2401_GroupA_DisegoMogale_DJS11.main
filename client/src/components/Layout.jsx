@@ -1,10 +1,11 @@
 import React, { useState } from "react" //allowa us to add state to components for state management.
 import styled, { ThemeProvider } from "styled-components" //styled-components for creating styled components with dynamic theming. 'styled-components is a library that alows us to write CSS-in-JS that looks like a real CSS file, but with all the power of JavaScript
-import "./index.css"
-import { lightTheme, darkTheme } from "./utils/Themes"
-import Sidebar from "./components/Sidebar"
+import "../index.css"
+import { lightTheme, darkTheme } from "../utils/Themes"
+import Sidebar from "../components/Sidebar"
 import classNames from "classnames"
-import NavBar from "./components/NavBar"
+import NavBar from "../components/NavBar"
+import { Outlet } from "react-router-dom"
 
 const Container = styled.div`
     background: ${({ theme}) => theme.bg};
@@ -31,11 +32,12 @@ export default function App() {
           </div>
           <div className="flex flex-col columns-3">
             <NavBar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-            Podtastic
+            <main>
+                <Outlet />
+            </main>
           </div>
         </div>
         </Container>
     </ThemeProvider>
   );
 }
-
