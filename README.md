@@ -4,6 +4,7 @@
 - [Icon generator](https://favicon.io/favicon-generator/)
 - [Metatags generator](https://metatags.io/)
 - Tabnine AI for predictive code assistance
+- [Material UI Icons](https://mui.com/material-ui/material-icons/)
 
 # Project Guidelines:
 [DJS11] Starter Instructions for the Final Portfolio Piece Submission 🚀
